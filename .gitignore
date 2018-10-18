@@ -42,3 +42,5 @@ cmake-build-debug/CMakeFiles/Sampling.dir/KFoldCrossValidation.cpp.o
 cmake-build-debug/CMakeFiles/Sampling.dir/link.txt
 cmake-build-debug/CMakeFiles/Sampling.dir/progress.make
 cmake-build-debug/CMakeFiles/Sampling.dir/StratifiedKFoldCrossValidation.cpp.o
+.idea/vcs.xml
+.idea/codeStyles/Project.xml
