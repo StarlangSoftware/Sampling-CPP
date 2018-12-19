@@ -3,4 +3,4 @@ project(Sampling)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_library(Sampling Bootstrap.cpp Bootstrap.h CrossValidation.cpp CrossValidation.h KFoldCrossValidation.cpp KFoldCrossValidation.h StratifiedKFoldCrossValidation.cpp StratifiedKFoldCrossValidation.h)
+add_library(Sampling Bootstrap.h CrossValidation.h KFoldCrossValidation.h StratifiedKFoldCrossValidation.h)
