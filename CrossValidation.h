@@ -4,9 +4,8 @@
 
 #ifndef SAMPLING_CROSSVALIDATION_H
 #define SAMPLING_CROSSVALIDATION_H
-using namespace std;
-
 #include <vector>
+using namespace std;
 
 template <class T> class CrossValidation {
 protected:
