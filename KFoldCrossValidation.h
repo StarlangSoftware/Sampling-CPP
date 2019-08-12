@@ -18,6 +18,14 @@ public:
     vector<T> getTestFold(int k);
 };
 
+/**
+ * A constructor of {@link KFoldCrossValidation} class which takes a sample as an array of instances, a K (K in K-fold cross-validation) and a seed number,
+ * then shuffles the original sample using this seed as random number.
+ *
+ * @param instanceList Original sample
+ * @param K K in K-fold cross-validation
+ * @param seed Random number to create K-fold sample(s)
+ */
 template<class T> KFoldCrossValidation<T>::KFoldCrossValidation(const vector<T> &instanceList, int K, unsigned int seed) {
     this->instanceList = instanceList;
     shuffle(this->instanceList.begin(), this->instanceList.end(), default_random_engine(seed));
@@ -25,6 +33,12 @@ template<class T> KFoldCrossValidation<T>::KFoldCrossValidation(const vector<T> 
     this->K = K;
 }
 
+/**
+ * getTrainFold returns the k'th train fold in K-fold cross-validation.
+ *
+ * @param k index for the k'th train fold of the K-fold cross-validation
+ * @return Produced training sample
+ */
 template<class T> vector<T> KFoldCrossValidation<T>::getTrainFold(int k){
     vector<T> trainFold;
     for (int i = 0; i < (k * N) / this->K; i++){
@@ -36,6 +50,12 @@ template<class T> vector<T> KFoldCrossValidation<T>::getTrainFold(int k){
     return trainFold;
 }
 
+/**
+ * getTestFold returns the k'th test fold in K-fold cross-validation.
+ *
+ * @param k index for the k'th test fold of the K-fold cross-validation
+ * @return Produced testing sample
+ */
 template<class T> vector<T> KFoldCrossValidation<T>::getTestFold(int k){
     vector<T> testFold;
     for (unsigned long i = (k * N) / this->K; i < ((k + 1) * N) / this->K; i++){
