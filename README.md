@@ -1,6 +1,8 @@
 # Sampling-CPP
-You can also see either [Java](https://github.com/olcaytaner/Sampling) 
-or [Python](https://github.com/olcaytaner/Sampling-Py) repository.
+
+For Developers
+============
+You can also see [Java](https://github.com/olcaytaner/Sampling), [Python](https://github.com/olcaytaner/Sampling-Py), or [C#](https://github.com/olcaytaner/Sampling-CS) repository.
 
 Detailed Description
 ============
