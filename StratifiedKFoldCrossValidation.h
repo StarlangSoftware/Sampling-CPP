@@ -34,7 +34,7 @@ template<class T> StratifiedKFoldCrossValidation<T>::StratifiedKFoldCrossValidat
     N = new unsigned long[numberOfClasses];
     for (int i = 0; i < numberOfClasses; i++){
         shuffle(this->instanceLists[i].begin(), this->instanceLists[i].end(), default_random_engine(seed));
-        N[i] = instanceLists[i].capacity();
+        N[i] = instanceLists[i].size();
     }
     this->K = K;
     this->numberOfClasses = numberOfClasses;

@@ -10,7 +10,7 @@ using namespace std;
 
 template <class T> class KFoldCrossValidation : public CrossValidation<T>{
 private:
-    unsigned long N;
+    int N;
     vector<T> instanceList;
 public:
     KFoldCrossValidation(const vector<T>& instanceList, int K, unsigned int seed);
@@ -29,7 +29,7 @@ public:
 template<class T> KFoldCrossValidation<T>::KFoldCrossValidation(const vector<T> &instanceList, int K, unsigned int seed) {
     this->instanceList = instanceList;
     shuffle(this->instanceList.begin(), this->instanceList.end(), default_random_engine(seed));
-    N = instanceList.capacity();
+    N = instanceList.size();
     this->K = K;
 }
 
@@ -44,7 +44,7 @@ template<class T> vector<T> KFoldCrossValidation<T>::getTrainFold(int k){
     for (int i = 0; i < (k * N) / this->K; i++){
         trainFold.push_back(instanceList.at(i));
     }
-    for (unsigned long i = ((k + 1) * N) / this->K; i < N; i++){
+    for (int i = ((k + 1) * N) / this->K; i < N; i++){
         trainFold.push_back(instanceList.at(i));
     }
     return trainFold;
@@ -58,7 +58,7 @@ template<class T> vector<T> KFoldCrossValidation<T>::getTrainFold(int k){
  */
 template<class T> vector<T> KFoldCrossValidation<T>::getTestFold(int k){
     vector<T> testFold;
-    for (unsigned long i = (k * N) / this->K; i < ((k + 1) * N) / this->K; i++){
+    for (int i = (k * N) / this->K; i < ((k + 1) * N) / this->K; i++){
         testFold.push_back(instanceList.at(i));
     }
     return testFold;
