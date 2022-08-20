@@ -3,7 +3,7 @@
 //
 
 #include "catch.hpp"
-#include "../StratifiedKFoldCrossValidation.h"
+#include "../src/StratifiedKFoldCrossValidation.h"
 
 using namespace std;
 

@@ -3,7 +3,7 @@
 //
 
 #include "catch.hpp"
-#include "../KFoldCrossValidation.h"
+#include "../src/KFoldCrossValidation.h"
 
 using namespace std;
 
