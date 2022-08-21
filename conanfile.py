@@ -15,5 +15,3 @@ class SamplingConan(ConanFile):
     def package(self):
         self.copy("*.h", dst="include", keep_path=False)
 
-    def package_info(self):
-        self.cpp_info.libs = ["Sampling"]
