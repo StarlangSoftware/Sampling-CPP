@@ -11,7 +11,7 @@ private:
     vector<T> instanceList;
 public:
     Bootstrap(const vector<T> &instanceList, unsigned int seed);
-    vector<T> getSample();
+    vector<T> getSample() const;
 };
 
 /**
@@ -36,7 +36,7 @@ template<class T> Bootstrap<T>::Bootstrap(const vector<T> &instanceList, unsigne
  *
  * @return Produced bootstrap sample
  */
-template<class T> vector<T> Bootstrap<T>::getSample(){
+template<class T> vector<T> Bootstrap<T>::getSample() const{
     return instanceList;
 }
 
