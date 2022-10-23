@@ -17,8 +17,8 @@ private:
 public:
     StratifiedKFoldCrossValidation(vector<T>* instanceLists, int numberOfClasses, int K, unsigned int seed);
     virtual ~StratifiedKFoldCrossValidation();
-    vector<T> getTrainFold(int k);
-    vector<T> getTestFold(int k);
+    vector<T> getTrainFold(int k) const;
+    vector<T> getTestFold(int k) const;
 };
 
 /**
@@ -46,7 +46,7 @@ template<class T> StratifiedKFoldCrossValidation<T>::StratifiedKFoldCrossValidat
  * @param k index for the k'th train fold of the K-fold stratified cross-validation
  * @return Produced training sample
  */
-template<class T> vector<T> StratifiedKFoldCrossValidation<T>::getTrainFold(int k){
+template<class T> vector<T> StratifiedKFoldCrossValidation<T>::getTrainFold(int k) const{
     vector<T> trainFold;
     for (int i = 0; i < numberOfClasses; i++){
         for (int j = 0; j < (k * N[i]) / this->K; j++){
@@ -65,7 +65,7 @@ template<class T> vector<T> StratifiedKFoldCrossValidation<T>::getTrainFold(int 
  * @param k index for the k'th test fold of the K-fold stratified cross-validation
  * @return Produced testing sample
  */
-template<class T> vector<T> StratifiedKFoldCrossValidation<T>::getTestFold(int k){
+template<class T> vector<T> StratifiedKFoldCrossValidation<T>::getTestFold(int k) const{
     vector<T> testFold;
     for (int i = 0; i < numberOfClasses; i++){
         for (unsigned long j = (k * N[i]) / this->K; j < ((k + 1) * N[i]) / this->K; j++){

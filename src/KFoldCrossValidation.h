@@ -14,8 +14,8 @@ private:
     vector<T> instanceList;
 public:
     KFoldCrossValidation(const vector<T>& instanceList, int K, unsigned int seed);
-    vector<T> getTrainFold(int k);
-    vector<T> getTestFold(int k);
+    vector<T> getTrainFold(int k) const;
+    vector<T> getTestFold(int k) const;
 };
 
 /**
@@ -39,7 +39,7 @@ template<class T> KFoldCrossValidation<T>::KFoldCrossValidation(const vector<T> 
  * @param k index for the k'th train fold of the K-fold cross-validation
  * @return Produced training sample
  */
-template<class T> vector<T> KFoldCrossValidation<T>::getTrainFold(int k){
+template<class T> vector<T> KFoldCrossValidation<T>::getTrainFold(int k) const{
     vector<T> trainFold;
     for (int i = 0; i < (k * N) / this->K; i++){
         trainFold.push_back(instanceList.at(i));
@@ -56,7 +56,7 @@ template<class T> vector<T> KFoldCrossValidation<T>::getTrainFold(int k){
  * @param k index for the k'th test fold of the K-fold cross-validation
  * @return Produced testing sample
  */
-template<class T> vector<T> KFoldCrossValidation<T>::getTestFold(int k){
+template<class T> vector<T> KFoldCrossValidation<T>::getTestFold(int k) const{
     vector<T> testFold;
     for (int i = (k * N) / this->K; i < ((k + 1) * N) / this->K; i++){
         testFold.push_back(instanceList.at(i));
