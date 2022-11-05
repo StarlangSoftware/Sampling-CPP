@@ -13,9 +13,9 @@ TEST_CASE("Bootstrap-testSmallSample") {
     vector<string> smallSample = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
     Bootstrap<string> bootstrap = Bootstrap<string>(smallSample, 1);
     vector<string> bootstrapSample = bootstrap.getSample();
-    REQUIRE(bootstrapSample[0] == "4");
-    REQUIRE(bootstrapSample[1] == "7");
-    REQUIRE(bootstrapSample[2] == "8");
+    REQUIRE(bootstrapSample[0] == "10");
+    REQUIRE(bootstrapSample[1] == "4");
+    REQUIRE(bootstrapSample[2] == "5");
     REQUIRE(bootstrapSample[3] == "6");
     REQUIRE(bootstrapSample[4] == "4");
     REQUIRE(bootstrapSample[5] == "6");
