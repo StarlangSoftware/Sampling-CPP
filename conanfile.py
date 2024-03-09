@@ -16,5 +16,5 @@ class SamplingConan(ConanFile):
     no_copy_source = True
 
     def package(self):
-        copy("*.h", keep_path=False, src=join(self.source_folder), dst=join(self.package_folder, "include"), pattern="*.h")
+        copy(conanfile=self, keep_path=False, src=join(self.source_folder), dst=join(self.package_folder, "include"), pattern="*.h")
 
