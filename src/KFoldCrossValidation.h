@@ -6,6 +6,7 @@
 #define SAMPLING_KFOLDCROSSVALIDATION_H
 #include "CrossValidation.h"
 #include <random>
+#include <algorithm>
 using namespace std;
 
 template <class T> class KFoldCrossValidation : public CrossValidation<T>{

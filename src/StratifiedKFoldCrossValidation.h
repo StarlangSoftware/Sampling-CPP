@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <random>
+#include <algorithm>
 #include "CrossValidation.h"
 
 template <class T> class StratifiedKFoldCrossValidation : public CrossValidation<T> {
