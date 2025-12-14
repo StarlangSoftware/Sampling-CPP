@@ -2,7 +2,6 @@
 #define SAMPLING_BOOTSTRAP_H
 
 #include <vector>
-#include <random>
 
 using namespace std;
 
